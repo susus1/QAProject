@@ -3,10 +3,11 @@ package examples.optional;
 import java.util.Optional;
 
 public class ProductRepository {
-	Optional<Product> findById(long id) {
-		Optional<Product> optional = Optional.empty();
-		Product product = new Product();
-		optional = Optional.of(product);
-		return optional;
+	public Optional<Product> findById(long id){
+		Product product1 = new Product();
+		//Optional<Product> optionalProduct = Optional.of(product1);
+		Optional<Product> optionalProduct = Optional.empty();
+		return optionalProduct;
 	}
+
 }
