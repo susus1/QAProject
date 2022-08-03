@@ -12,9 +12,7 @@ public class Runner {
 
 		int i = 0;
 		try {
-			Path path = Path.of("C:/Users/Owner/Documents/file2.txt");
-			String s = Files.readString(path); //checked exception
-			i = Integer.parseInt(s); //unchecked exception
+			i = FileHandler.readFromFile();
 			System.out.println(i);
 		}
 		catch (NumberFormatException e) {
@@ -29,5 +27,7 @@ public class Runner {
 		
 		System.out.println(i);
 	}
+
+
 
 }
