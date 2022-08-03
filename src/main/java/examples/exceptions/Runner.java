@@ -10,21 +10,24 @@ public class Runner {
 
 	public static void main(String[] args) {
 
+		int i = 0;
 		try {
-			Path path = Path.of("C:/Users/Owner/Documents/file.txt");
+			Path path = Path.of("C:/Users/Owner/Documents/file2.txt");
 			String s = Files.readString(path); //checked exception
-			int i = Integer.parseInt(s); //unchecked exception
+			i = Integer.parseInt(s); //unchecked exception
 			System.out.println(i);
-		} catch (NumberFormatException e) {
+		}
+		catch (NumberFormatException e) {
 			System.out.println("not a number");
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
 			System.out.println("File unavailable");
 		}
-
 		finally {
 			System.out.println("allways executed");
 		}
-
+		
+		System.out.println(i);
 	}
 
 }
