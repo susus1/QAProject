@@ -5,10 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TargetClass_TEST {
+public class TargetClassTest {
 	
     @Test
-    public void constructor_TEST(){
+    public void constructorTest(){
         TargetClass object = new TargetClass();
 
         // expectation, result
@@ -16,7 +16,7 @@ public class TargetClass_TEST {
     }
 
     @Test
-    public void getID_TEST(){
+    public void getIdTest(){
         TargetClass object = new TargetClass();
 
         // expectation, result
@@ -24,12 +24,28 @@ public class TargetClass_TEST {
     }
 
     @Test
-    public void rtnMessage_TEST(){
+    public void rtnMessageTest(){
         TargetClass object = new TargetClass();
         String result = object.rtnMessage();
 
         // expectation, result
         assertEquals("Hello World", result);
+    }
+    
+    @Test
+    public void rtnMessageTrue(){
+        TargetClass object = new TargetClass();
+        String result = object.rtnMessage(true);
+
+        // expectation, result
+        assertEquals("Hello World", result);
+    }
+    
+    @Test
+    public void rtnMessageFalse(){
+        TargetClass object = new TargetClass();
+        String result = object.rtnMessage(false);
+        assertEquals("GoodBye!", result);
     }
 
 }
