@@ -5,7 +5,7 @@ public class Rectangle implements Shape {
     private double width;
 
     public double calculateArea() {
-        return length * width;
+        return new OldAreaCalulator().calculateAreaRectangle(this);
     }
 
     public double getLength() {

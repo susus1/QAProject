@@ -4,7 +4,7 @@ public class Circle implements Shape {
     private double radius;
 
     public double calculateArea() {
-        return radius * radius * Math.PI;
+        return new OldAreaCalulator().calculateAreaCircle(this);
     }
 
     public double getRadius() {
