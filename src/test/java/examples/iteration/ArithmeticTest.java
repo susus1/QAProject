@@ -1,8 +1,10 @@
-package example;
+package examples.iteration;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import examples.iteration.Arithmetic;
 
 public class ArithmeticTest {
 	
