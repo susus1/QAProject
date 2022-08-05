@@ -5,14 +5,13 @@ import examples.optional.Product;
 public class Runner {
 
 	public static void main(String[] args) {
-		
-		int i = 5/7;
-		System.out.println(i); //zero 
-		
-		int j = 15/7;
-		System.out.println(j); //rounds down
-		
-		
+		int a = 6;
+		int b = 7;
+		int c = 8;
+		int i = ((a * b) / (c + 1)) - 5;
+		int j = a * b / c + 1 - 5;
+		System.out.println(i);
+		System.out.println(j);
 		
 //		Product p = new Product("Dave");
 //		p=null;
