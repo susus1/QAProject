@@ -13,8 +13,10 @@ public class MusicTrackTest {
     public void hashSetWorksCorrectlyWithMusicTrack (){
         MusicTrack musicTrack1 = new MusicTrack();
         musicTrack1.setId(1L);
+        musicTrack1.setTitle("Bat...");
         MusicTrack musicTrack2 = new MusicTrack();
         musicTrack2.setId(1L);
+        musicTrack2.setTitle("Bat...");
 
         HashSet<MusicTrack> musicTracks = new HashSet<>();
         //ArrayList<MusicTrack> musicTracks = new ArrayList<>();

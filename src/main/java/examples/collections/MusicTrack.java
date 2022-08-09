@@ -24,25 +24,21 @@ public class MusicTrack {
 		this.artist = artist;
 	}
 	
-	
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
-		return ((MusicTrack)obj).id == id;
+		return ((MusicTrack)obj).id == id && ((MusicTrack)obj).title.equals(title);
 	}
-	
-	
 	
 	
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return (int)id;
+		return (int)id + title.hashCode();
 	}
 	
-	
-	
+
 	public long getId() {
 		return id;
 	}
