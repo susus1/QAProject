@@ -14,28 +14,40 @@ public class ListMusicTrackRepository implements MusicTrackRepository {
 		return list.add(musicTrack);
 	}
 
+	
 	@Override
 	public MusicTrack selectById(long id) {
-		// TODO Auto-generated method stub
+		for (MusicTrack musicTrack : list) {
+			if(musicTrack.getId() == id) {
+				return musicTrack;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public Collection<MusicTrack> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		// return the instance variable
+		return List.copyOf(list);
 	}
 
 	@Override
 	public boolean update(MusicTrack musicTrack) {
-		// TODO Auto-generated method stub
-		return false;
+		// call indexOf to get element position in the list
+		// call set, passing in the index and the updated object
+		int index = list.indexOf(musicTrack);
+		if(index == -1) {
+			return false;
+		}
+		list.set(index, musicTrack);
+		
+		return true;
 	}
 
 	@Override
 	public boolean delete(MusicTrack musicTrack) {
-		// TODO Auto-generated method stub
-		return false;
+		// call the List's remove method
+	    return	list.remove(musicTrack);
 	}
 
 }
