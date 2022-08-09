@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="testing.TargetClassTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="examples.iteration.ArithmeticTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -58,9 +58,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="testing.TargetClassTest" name="constructorTest" time="0.002"/>
-  <testcase classname="testing.TargetClassTest" name="rtnMessageFalse" time="0"/>
-  <testcase classname="testing.TargetClassTest" name="getIdTest" time="0"/>
-  <testcase classname="testing.TargetClassTest" name="rtnMessageTest" time="0"/>
-  <testcase classname="testing.TargetClassTest" name="rtnMessageTrue" time="0"/>
+  <testcase classname="examples.iteration.ArithmeticTest" name="addTest" time="0"/>
+  <testcase classname="examples.iteration.ArithmeticTest" name="factorialTest" time="0"/>
 </testsuite>
