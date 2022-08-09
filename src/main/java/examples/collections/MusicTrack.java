@@ -25,13 +25,19 @@ public class MusicTrack {
 	}
 	
 
+	/**
+	 * Define equality for MusicTracks
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
 		return ((MusicTrack)obj).id == id && ((MusicTrack)obj).title.equals(title);
 	}
 	
-	
+	/**
+	 * Equal objects are required to have the same hashCode
+	 * Unequal objects can have equal hashcodes (a collision), but preferably should be different
+	 */
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub

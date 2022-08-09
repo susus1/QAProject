@@ -23,6 +23,8 @@ public class MusicTrackTest {
         musicTracks.add(musicTrack1);
         musicTracks.remove(musicTrack2);
         assertEquals(0, musicTracks.size());
+        
+        ArrayList<String> x;
     }
 }
 
