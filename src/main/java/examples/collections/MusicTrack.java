@@ -1,5 +1,11 @@
 package examples.collections;
 
+
+/**
+ * 
+ * @author Owner
+ *
+ */
 public class MusicTrack {
 	private long id;
 	private String title;
