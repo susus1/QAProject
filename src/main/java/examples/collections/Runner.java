@@ -11,40 +11,52 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		Product p1 = new Product();
-		p1.setId(1L);
-		p1.setName("Dog food");
+		MusicTrackRepository repository = new ListMusicTrackRepository();
 		
-		Product p2 = new Product();
-		p2.setId(2L);
-		p2.setName("Milk");
+		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits");
+		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
 		
-		Map<Long, Product> products = new HashMap<>();
-		products.put(1L, p1);
-		products.put(2L, p2);	
+		boolean added1 = repository.add(track1);
+		boolean added2 = repository.add(track2);
 		
-		System.out.println(products.size());
+		System.out.println(added1);
+		System.out.println(added2);
 		
-		Product product = products.get(2L);
+		
+//		Product p1 = new Product();
+//		p1.setId(1L);
+//		p1.setName("Dog food");
+//		
+//		Product p2 = new Product();
+//		p2.setId(2L);
+//		p2.setName("Milk");
+//		
+//		Map<Long, Product> products = new HashMap<>();
+//		products.put(1L, p1);
+//		products.put(2L, p2);	
+//		
+//		System.out.println(products.size());
+//		
+//		Product product = products.get(2L);
 		//System.out.println(product.getName());
 		
 //		Product a = products.remove(1L);
 //		Product b = products.remove(1L);
 		
-		System.out.println(products.size());
-		
-		for (Product p : products.values()) {
-			System.out.println(p.getName());
-		}
-		
-		
-		for (Long id : products.keySet()) {
-			System.out.println(id);
-		}
-		
-		for (Map.Entry<Long, Product> kv : products.entrySet()) {
-			System.out.println(kv.getKey()+"    "+kv.getValue().getName());
-		}
+//		System.out.println(products.size());
+//		
+//		for (Product p : products.values()) {
+//			System.out.println(p.getName());
+//		}
+//		
+//		
+//		for (Long id : products.keySet()) {
+//			System.out.println(id);
+//		}
+//		
+//		for (Map.Entry<Long, Product> kv : products.entrySet()) {
+//			System.out.println(kv.getKey()+"    "+kv.getValue().getName());
+//		}
 		
 		
 	

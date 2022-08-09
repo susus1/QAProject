@@ -1,13 +1,17 @@
 package examples.collections;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-public class ListMusicTrackRepository implements MusicTrackRepository{
+public class ListMusicTrackRepository implements MusicTrackRepository {
 
+	private List<MusicTrack> list = new ArrayList<>();
+	
 	@Override
 	public boolean add(MusicTrack musicTrack) {
 		// TODO Auto-generated method stub
-		return false;
+		return list.add(musicTrack);
 	}
 
 	@Override
