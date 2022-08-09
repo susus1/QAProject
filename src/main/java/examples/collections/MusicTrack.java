@@ -11,6 +11,7 @@ public class MusicTrack {
 	private String title;
 	private String album;
 	private String artist;
+	private Genre genre;
 	
 	
 	
@@ -24,7 +25,12 @@ public class MusicTrack {
 		this.artist = artist;
 	}
 	
+	
 
+	public MusicTrack(long id, String title, String album, String artist, Genre genre) {
+		this(id, title, album, artist);
+		this.genre = genre;
+	}
 	/**
 	 * Define equality for MusicTracks
 	 */
@@ -68,6 +74,12 @@ public class MusicTrack {
 	}
 	public void setArtist(String artist) {
 		this.artist = artist;
+	}
+	public Genre getGenre() {
+		return genre;
+	}
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 
 }

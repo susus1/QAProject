@@ -11,9 +11,9 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		MusicTrackRepository repository = new SetMusicTrackRepository();
+		MusicTrackRepository repository = new MapMusicTrackRepository();
 		
-		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits");
+		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits", Genre.POP);
 		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
 		
 		MusicTrack track3 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell 2", "Meat Loaf");
@@ -25,12 +25,12 @@ public class Runner {
 		MusicTrack t1 = repository.selectById(1L);
 		repository.update(track3);
 
-		repository.delete(track1);
+		//repository.delete(track1);
 		
 		
 		
 		for (MusicTrack musicTrack : repository.selectAll()) {
-			System.out.println(musicTrack.getTitle());
+			System.out.println(musicTrack.getTitle() +"   "+musicTrack.getGenre());
 		}
 		
 		
