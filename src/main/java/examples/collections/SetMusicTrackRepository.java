@@ -1,36 +1,48 @@
 package examples.collections;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class SetMusicTrackRepository implements MusicTrackRepository {
 
+	private Set<MusicTrack> musicTracks = new HashSet<>();
+	
 	@Override
 	public boolean add(MusicTrack musicTrack) {
-		// TODO Auto-generated method stub
-		return false;
+		// call the Set's add method
+		return musicTracks.add(musicTrack);
 	}
 
 	@Override
 	public MusicTrack selectById(long id) {
-		// TODO Auto-generated method stub
+		for (MusicTrack musicTrack : musicTracks) {
+			if(musicTrack.getId() == id) {
+				return musicTrack;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public Collection<MusicTrack> selectAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return List.copyOf(musicTracks);
 	}
 
 	@Override
 	public boolean update(MusicTrack musicTrack) {
-		// TODO Auto-generated method stub
-		return false;
+		// remove the musicTrack
+		musicTracks.remove(musicTrack);
+		// add the modified object
+		return musicTracks.add(musicTrack);
 	}
 
 	@Override
 	public boolean delete(MusicTrack musicTrack) {
-		// TODO Auto-generated method stub
+		// call the remove method
+		musicTracks.remove(musicTrack);
 		return false;
 	}
 

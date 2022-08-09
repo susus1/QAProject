@@ -16,11 +16,22 @@ public class Runner {
 		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits");
 		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
 		
+		MusicTrack track3 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell 2", "Meat Loaf");
+		
 		boolean added1 = repository.add(track1);
 		boolean added2 = repository.add(track2);
 		
-		System.out.println(added1);
-		System.out.println(added2);
+		
+		MusicTrack t1 = repository.selectById(1L);
+		repository.update(track3);
+
+		repository.delete(track1);
+		
+		
+		
+		for (MusicTrack musicTrack : repository.selectAll()) {
+			System.out.println(musicTrack.getTitle());
+		}
 		
 		
 //		Product p1 = new Product();
