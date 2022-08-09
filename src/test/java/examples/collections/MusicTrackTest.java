@@ -1,10 +1,11 @@
 package examples.collections;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
-import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MusicTrackTest {
@@ -16,8 +17,10 @@ public class MusicTrackTest {
         musicTrack2.setId(1L);
 
         HashSet<MusicTrack> musicTracks = new HashSet<>();
+        //ArrayList<MusicTrack> musicTracks = new ArrayList<>();
         musicTracks.add(musicTrack1);
         musicTracks.remove(musicTrack2);
         assertEquals(0, musicTracks.size());
     }
 }
+

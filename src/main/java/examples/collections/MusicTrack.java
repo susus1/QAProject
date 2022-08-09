@@ -17,6 +17,26 @@ public class MusicTrack {
 		this.album = album;
 		this.artist = artist;
 	}
+	
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return ((MusicTrack)obj).id == id;
+	}
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return (int)id;
+	}
+	
+	
+	
 	public long getId() {
 		return id;
 	}
