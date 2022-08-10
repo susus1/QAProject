@@ -35,25 +35,18 @@ public class Runner {
 		products.add(p2);
 		products.add(p3);
 		products.add(p4);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-		Consumer<Product> consumer = p -> System.out.println(p.getName());
-		products.forEach(consumer);
 
-//		for (Product product : products) {
-//			System.out.println(product.getName());
-//		}
 
-		ArrayList<Integer> arrayList = new ArrayList<>();
-		arrayList.add(1);
-		arrayList.add(2);
-		arrayList.add(3);
-		arrayList.add(4);
-
-		arrayList.forEach(n -> {
-			if (n % 2 == 0) {
-				System.out.println(n);
-			}
-		});
 
 //		MusicTrackRepository repository = new MapMusicTrackRepository();
 //		
