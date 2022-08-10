@@ -66,7 +66,7 @@ public class Runner {
 		boolean added6 = repository.add(track6);
 		boolean added7 = repository.add(track7);
 		
-		List<MusicTrack> tracks = repository.selectByAlbum("Rumours");
+		List<MusicTrack> tracks = repository.selectByArtist("Meat Loaf");
 		for (MusicTrack musicTrack : tracks) {
 			System.out.println(musicTrack.getTitle());
 		}

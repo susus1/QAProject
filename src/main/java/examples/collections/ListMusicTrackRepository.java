@@ -32,6 +32,11 @@ public class ListMusicTrackRepository implements MusicTrackRepository {
 				.filter(track -> track.getAlbum().contains(album)).collect(Collectors.toList());
 	}
 	
+	public List<MusicTrack> selectByArtist (String artist){
+		return list.stream()
+				.filter(track -> track.getArtist().contains(artist)).collect(Collectors.toList());
+	}
+	
 	
 	
 
