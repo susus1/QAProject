@@ -3,6 +3,7 @@ package examples.collections;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListMusicTrackRepository implements MusicTrackRepository {
 
@@ -17,13 +18,22 @@ public class ListMusicTrackRepository implements MusicTrackRepository {
 	
 	@Override
 	public MusicTrack selectById(long id) {
-		for (MusicTrack musicTrack : list) {
-			if(musicTrack.getId() == id) {
-				return musicTrack;
-			}
-		}
-		return null;
+		return list.stream().filter(track -> track.getId() == id).findFirst().get();
+//		for (MusicTrack musicTrack : list) {
+//			if(musicTrack.getId() == id) {
+//				return musicTrack;
+//			}
+//		}
+//		return null;
 	}
+	
+	public List<MusicTrack> selectByAlbum (String album){
+		return list.stream()
+				.filter(track -> track.getAlbum().contains(album)).collect(Collectors.toList());
+	}
+	
+	
+	
 
 	@Override
 	public Collection<MusicTrack> selectAll() {
