@@ -1,19 +1,26 @@
 package example.generics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import design.patterns.adapter.Product;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		ArrayList<String> arrayList = new ArrayList<>();
-		arrayList.add("Monday");
-		//arrayList.add(new Product());
-		
-		String day = (String) arrayList.get(1);
-		System.out.println(day);
 
+
+		Cage<Animal> cage = new Cage<>();
+		
+		List<Animal> list = new ArrayList<>();
+		list.add(new Tiger());
+		list.add(new Elephant());
+		
+		cage.add(list );
+		
+		
+		LowerBoundCage lowerBoundCage = new LowerBoundCage();
+		lowerBoundCage.add(list);
 	}
 
 }

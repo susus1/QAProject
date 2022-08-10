@@ -1,14 +1,16 @@
 package example.generics;
 
-public class Cage<T> {
+import java.util.List;
 
-	private T object;
+public class Cage<T extends Animal> {
 
-	public T getObject() {
-		return object;
+	private List<T> list;
+
+	public List<T> getList() {
+		return list;
 	}
 
-	public void setObject(T object) {
-		this.object = object;
+	public void add(List<T> list) {
+		this.list = list;
 	}
 }
