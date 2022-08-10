@@ -4,34 +4,57 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		
+
 		Product p1 = new Product();
 		p1.setId(1L);
 		p1.setName("Dog food");
-	
+
 		Product p2 = new Product();
 		p2.setId(2L);
 		p2.setName("Milk");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		Product p3 = new Product();
+		p3.setId(3L);
+		p3.setName("Cat food");
+
+		Product p4 = new Product();
+		p4.setId(4L);
+		p4.setName("Potatoes");
+
+		List<Product> products = new ArrayList<>();
+
+		products.add(p1);
+		products.add(p2);
+		products.add(p3);
+		products.add(p4);
+
+		Consumer<Product> consumer = p -> System.out.println(p.getName());
+		products.forEach(consumer);
+
+//		for (Product product : products) {
+//			System.out.println(product.getName());
+//		}
+
+		ArrayList<Integer> arrayList = new ArrayList<>();
+		arrayList.add(1);
+		arrayList.add(2);
+		arrayList.add(3);
+		arrayList.add(4);
+
+		arrayList.forEach(n -> {
+			if (n % 2 == 0) {
+				System.out.println(n);
+			}
+		});
+
 //		MusicTrackRepository repository = new MapMusicTrackRepository();
 //		
 //		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits", Genre.POP);
@@ -55,16 +78,7 @@ public class Runner {
 //		for (MusicTrack musicTrack : repository.selectAll()) {
 //			System.out.println(musicTrack.getTitle());
 //		}
-		
-		
 
-
-
-		
-
-		
-	
-		
 	}
 
 }
