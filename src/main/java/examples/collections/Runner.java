@@ -11,76 +11,55 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		MusicTrackRepository repository = new MapMusicTrackRepository();
-		
-		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits", Genre.POP);
-		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
-		
-		MusicTrack track3 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell 2", "Meat Loaf");
-		
-		boolean added1 = repository.add(track1);
-		boolean added2 = repository.add(track2);
-		
-		
-		MusicTrack t1 = repository.selectById(1L);
-		repository.update(track3);
-
-		//repository.delete(track1);
-		
-		
-		
-		for (MusicTrack musicTrack : repository.selectAll()) {
-			System.out.println(musicTrack.getTitle() +"   "+musicTrack.getGenre());
-		}
-		
-		
-//		Product p1 = new Product();
-//		p1.setId(1L);
-//		p1.setName("Dog food");
-//		
-//		Product p2 = new Product();
-//		p2.setId(2L);
-//		p2.setName("Milk");
-//		
-//		Map<Long, Product> products = new HashMap<>();
-//		products.put(1L, p1);
-//		products.put(2L, p2);	
-//		
-//		System.out.println(products.size());
-//		
-//		Product product = products.get(2L);
-		//System.out.println(product.getName());
-		
-//		Product a = products.remove(1L);
-//		Product b = products.remove(1L);
-		
-//		System.out.println(products.size());
-//		
-//		for (Product p : products.values()) {
-//			System.out.println(p.getName());
-//		}
-//		
-//		
-//		for (Long id : products.keySet()) {
-//			System.out.println(id);
-//		}
-//		
-//		for (Map.Entry<Long, Product> kv : products.entrySet()) {
-//			System.out.println(kv.getKey()+"    "+kv.getValue().getName());
-//		}
-		
-		
+		Product p1 = new Product();
+		p1.setId(1L);
+		p1.setName("Dog food");
 	
-//		HashSet<MusicTrack> tracks = new HashSet<>();
-//		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits");
+		Product p2 = new Product();
+		p2.setId(2L);
+		p2.setName("Milk");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		MusicTrackRepository repository = new MapMusicTrackRepository();
+//		
+//		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits", Genre.POP);
 //		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
+//		MusicTrack track3 = new MusicTrack(3L, "Two Out of Three Ain't Bad", "Bat out of Hell", "Meat Loaf");
+//		MusicTrack track4 = new MusicTrack(4L, "Breathe", "The Dark Side of the Moon", "Pink Floyd");
+//		MusicTrack track5 = new MusicTrack(5L, "Go your own way", "Rumours", "Fleetwood Mac");
+//		MusicTrack track6 = new MusicTrack(6L, "Dreams", "Rumours", "Fleetwood Mac");
+//		MusicTrack track7 = new MusicTrack(7L, "Stayin' Alive", "Saturday Night Fever", "Bee Gees");
 //		
-//		tracks.add(track1);
-//		tracks.add(track2);
+//		boolean added1 = repository.add(track1);
+//		boolean added2 = repository.add(track2);
+//		boolean added3 = repository.add(track3);
+//		boolean added4 = repository.add(track4);
+//		boolean added5 = repository.add(track5);
+//		boolean added6 = repository.add(track6);
+//		boolean added7 = repository.add(track7);
+//				
+//		MusicTrack t1 = repository.selectById(1L);
 //		
-//		for (MusicTrack musicTrack : tracks) {
+//		for (MusicTrack musicTrack : repository.selectAll()) {
 //			System.out.println(musicTrack.getTitle());
 //		}
+		
+		
+
+
+
 		
 
 		
