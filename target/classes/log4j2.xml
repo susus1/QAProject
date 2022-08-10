@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
+<!--Appenders set how messages are formatted and where they are sent -->
   <Appenders>
     <File name="FILEOUT" fileName="errors.log" append="false">
       <PatternLayout>
@@ -10,10 +11,11 @@
       <PatternLayout pattern="%m%n"/>
     </Console>
   </Appenders>
+  <!--Loggers set the initial Root log level, and which Appender to use with which log level-->
   <Loggers>
-    <Root level="debug">
-      <AppenderRef ref="FILEOUT" level="debug"/>
-      <AppenderRef ref="STDOUT" level="info"/>
+    <Root level="trace">
+      <AppenderRef ref="FILEOUT" level="error" />
+      <AppenderRef ref="STDOUT" />
     </Root>
   </Loggers>
 </Configuration>
