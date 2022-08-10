@@ -13,7 +13,7 @@
   </Appenders>
   <!--Loggers set the initial Root log level, and which Appender to use with which log level-->
   <Loggers>
-    <Root level="trace">
+    <Root level="debug">
       <AppenderRef ref="FILEOUT" level="error" />
       <AppenderRef ref="STDOUT" />
     </Root>
