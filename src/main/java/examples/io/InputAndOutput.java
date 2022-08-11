@@ -10,24 +10,33 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class InputAndOutput {
-	
-    public void bufferedCopy()  {
-        try(
-            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/textFile.txt"));
-            BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/newTextFile.txt"))
-        ) {
-            String line;
-            while((line = br.readLine()) != null) {
-                bw.write(line + "\n");
-            }
-        } catch (IOException e) {
-            System.out.println("IOException: " + e.getMessage());
-        }
-    }
+
+	public static void main(String[] args) {
+		InputAndOutput io = new InputAndOutput();
+		try {
+			io.bufferedCopy();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		io.copy("photo.jpg", "copy.jpg");
+	}
+
+	public void bufferedCopy() throws IOException {
+		
+		try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/textFile.txt"));
+				BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/newTextFile.txt"));) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				bw.write(line + "\n");
+			}
+		}
+	}
 
 	public void copy(String inFile, String outFile) {
 		try (FileInputStream fileInputStream = new FileInputStream("src/main/resources/" + inFile);
-				FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/" + outFile);) {
+				FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/" + outFile)
+				) {
 			int numberOfBytesRead;
 			byte[] bytesArray = new byte[128];
 			while ((numberOfBytesRead = fileInputStream.read(bytesArray)) != -1) {
@@ -37,11 +46,5 @@ public class InputAndOutput {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	
-	public static void main(String[] args) {
-		InputAndOutput io = new InputAndOutput();
-		io.bufferedCopy();
-//		io.copy("photo.jpg", "copy.jpg");
-	}
+
 }
