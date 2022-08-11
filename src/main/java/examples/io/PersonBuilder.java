@@ -16,13 +16,13 @@ public class PersonBuilder {
 		people.add(p2);
 		people.add(p3);
 
-		// people.stream().forEach(p -> System.out.println(p));
+		people.stream().forEach(p -> System.out.println(p));
 
-		String search = "Pete";
-		
-		people.parallelStream().filter(p -> p.getName().equalsIgnoreCase(search))
-		.findFirst()
-		.ifPresentOrElse(p -> System.out.println(p), ()->System.out.println("Not found"));
+//		String search = "Pete";
+//		
+//		people.parallelStream().filter(p -> p.getName().equalsIgnoreCase(search))
+//		.findFirst()
+//		.ifPresentOrElse(p -> System.out.println(p), ()->System.out.println("Not found"));
 		
 		
 		
