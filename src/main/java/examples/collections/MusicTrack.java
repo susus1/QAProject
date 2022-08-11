@@ -50,7 +50,16 @@ public class MusicTrack {
 		return (int)id + title.hashCode();
 	}
 	
+	
+	
 
+	@Override
+	public String toString() {
+		return String.format("id: %d title: %s album: %s artist: %s", id, title, album, artist);
+	}
+	
+	
+	
 	public long getId() {
 		return id;
 	}
