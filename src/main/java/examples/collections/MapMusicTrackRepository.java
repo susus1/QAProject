@@ -25,6 +25,7 @@ public class MapMusicTrackRepository implements MusicTrackRepository {
 
 	@Override
 	public Collection<MusicTrack> selectAll() {
+		
 		// return the values() method
 		return map.values();
 	}

@@ -24,7 +24,7 @@ public class InputAndOutput {
 
 	public void bufferedCopy() throws IOException {
 		
-		try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/textFile.txt"));
+		try (var br = new BufferedReader(new FileReader("src/main/resources/textFile.txt"));
 				BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/newTextFile.txt"));) {
 			String line;
 			while ((line = br.readLine()) != null) {

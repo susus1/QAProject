@@ -14,7 +14,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 
-		ListMusicTrackRepository repository = new ListMusicTrackRepository();
+		var repository = new ListMusicTrackRepository();
 		
 		MusicTrack track1 = new MusicTrack(1L,"Expresso Love", "Making Movies", "Dire Staits", Genre.POP);
 		MusicTrack track2 = new MusicTrack(2L, "Bat out of hell", "Bat out of Hell", "Meat Loaf");
