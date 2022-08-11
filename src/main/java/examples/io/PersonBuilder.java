@@ -19,6 +19,13 @@ public class PersonBuilder {
 		// people.stream().forEach(p -> System.out.println(p));
 
 		String search = "Pete";
+		
+		people.parallelStream().filter(p -> p.getName().equalsIgnoreCase(search))
+		.findFirst()
+		.ifPresentOrElse(p -> System.out.println(p), ()->System.out.println("Not found"));
+		
+		
+		
 //		Optional<Person> optional = people.stream().filter(p -> p.getName().equalsIgnoreCase(search)).findFirst();
 //		if (optional.isPresent()) {
 //			System.out.println(optional.get());
@@ -28,9 +35,7 @@ public class PersonBuilder {
 		
 		//Person person = people.stream().filter(p -> p.getName().equalsIgnoreCase(search)).findFirst().orElse(null);
 		
-		people.parallelStream().filter(p -> p.getName().equalsIgnoreCase(search))
-				.findFirst()
-				.ifPresentOrElse(p -> System.out.println(p), ()->System.out.println("Not found"));
+
 
 	}
 
