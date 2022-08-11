@@ -22,16 +22,29 @@ public class ReadWritePerson {
 		people.add(p2);
 		people.add(p3);
 
+
 		try {
 			//writeToFile(people);
-			
 			List<Person> retrievedList = readFromFile();
 			retrievedList.forEach(p->System.out.println(p));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
+			
 
+
+
+	}
+
+	private static void writeToFile(List<Person> people) throws IOException {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/people.txt"))) {
+
+			for (Person person : people) {
+				String personString = String.format("%s,%d,%s%n", person.getName(), person.getAge(),
+						person.getJobTitle());
+				bw.write(personString);
+			}
+		}
 	}
 
 	private static List<Person> readFromFile() throws IOException {
@@ -47,15 +60,6 @@ public class ReadWritePerson {
 		}
 	}
 
-	private static void writeToFile(List<Person> people) throws IOException {
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/people.txt"))) {
 
-			for (Person person : people) {
-				String personString = String.format("%s,%d,%s%n", person.getName(), person.getAge(),
-						person.getJobTitle());
-				bw.write(personString);
-			}
-		}
-	}
 
 }
