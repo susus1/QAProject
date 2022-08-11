@@ -19,8 +19,8 @@ public class DBUtils {
 	private final String dbPassword;
 
 	private DBUtils(String properties) {
-		Properties dbProps = new Properties();
-		try (InputStream fis = ClassLoader.getSystemResourceAsStream(properties)) {
+		var dbProps = new Properties();
+		try (var fis = ClassLoader.getSystemResourceAsStream(properties)) {
 			dbProps.load(fis);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -35,9 +35,9 @@ public class DBUtils {
 	}
 
 	public int init(String... paths) {
-		int modified = 0;
+		var modified = 0;
 
-		for (String path : paths) {
+		for (var path : paths) {
 			modified += executeSQLFile(path);
 		}
 
@@ -46,9 +46,9 @@ public class DBUtils {
 
 	public int executeSQLFile(String file) {
 		int modified = 0;
-		try (Connection connection = this.getConnection();
-				BufferedReader br = new BufferedReader(new FileReader(file));) {
-			String fileAsString = br.lines().reduce((acc, next) -> acc + next).orElse("");
+		try (var connection = this.getConnection();
+				var br = new BufferedReader(new FileReader(file));) {
+			var fileAsString = br.lines().reduce((acc, next) -> acc + next).orElse("");
 			String[] queries = fileAsString.split(";");
 			modified += Stream.of(queries).map(string -> {
 				try (Statement statement = connection.createStatement();) {
